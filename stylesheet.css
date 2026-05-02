@@ -1,0 +1,382 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body {
+    color: #ededed;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    position: relative;
+    font-size: 45px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+
+}
+
+.navbar a {
+    display: inline-block;
+    font-size: 35px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 150px;
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a:hover {
+    color: #0ef;
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    height: 100vh;
+    background: url(Purple\ Illustrated\ Mountain\ Desktop\ Wallpaper.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 70px 10% 0;
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+
+}
+
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 30px;
+    animation: slideTop 1s ease forwards;
+    animation-delay: .7s;
+
+}
+
+.home-content h3 span {
+    color: #0ef;
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+
+
+}
+
+.home-content p {
+    font-size: 20px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+
+}
+
+.home-sci a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #0ef;
+    text-decoration: none;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+
+    margin: 30px 15px 30px 0;
+}
+
+.home-sci a:hover {
+    background: #0ef;
+    color: #081b29;
+    box-shadow: 0 0 20px #0ef;
+}
+
+.btn-box {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px #0ef,
+        0 0 25px #0ef
+}
+
+.btn-box:hover {
+    box-shadow: 0 0 5px cyan,
+        0 0 25px cyan, 0 0 50px cyan,
+        0 0 100px cyan, 0 0 200px cyan
+}
+
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+    gap: 20px;
+    justify-content: start;
+}
+
+.project-card {
+    width: 300px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 1.5;   /* improves readability */
+    margin: 10px 0;
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.portafolio-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: url(Portafolio.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 70px 40px 0;
+}
+
+.portafolio-page h1 {
+    margin-left: 20px;
+    color: white;
+}
+
+.project-files {
+    list-style: none;      /* removes bullets (optional) */
+    padding: 0;
+    margin-top: 10px;
+}
+
+.project-files li {
+    margin-bottom: 5px;    /* space between items */
+}
+
+.project-files a {
+    color: #bbbbbb;        /* lighter color */
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.project-files a:hover {
+    color: #ffffff;        /* brighter on hover */
+}
+
+.portafolio-page h1 {
+    font-size: 25px;
+}
+
+
+.about-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: url(aboutMe.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 70px 40px 0;
+}
+
+/* CONTACT SECTION */
+.contact-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+}
+
+.contact-container {
+  display: flex;
+  gap: 50px;
+  max-width: 1000px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+/* LEFT SIDE INFO */
+.contact-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-info h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.info-box {
+  margin-bottom: 15px;
+}
+
+/* FORM */
+.contact-form {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  background: #1f1f1f;
+  color: white;
+}
+
+.contact-form textarea {
+  min-height: 150px;
+  resize: none;
+}
+
+.contact-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #00bcd4;
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #0097a7;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.contact-placeholder {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background: #0f172a; /* dark background (adjust to your theme) */
+  color: #fff;
+  padding: 80px 20px;
+}
+
+#contact {
+  scroll-margin-top: 100px;
+}
+
+body {
+  background: #0f172a;
+  color: #fff;
+}
