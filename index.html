@@ -1,46 +1,394 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="stylesheet.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio Landing Page</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portafolio.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: #F5F0EA;
+      color: #3B2412;
+    }
+
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #6b5a45;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #3B2412;
+    }
+
+    /* HERO */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 80px 60px;
+      max-width: 1200px;
+      margin: auto;
+      gap: 40px;
+    }
+
+    .quote {
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      color: #7a6a58;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 64px;
+      line-height: 1.1;
+    }
+
+    h1 span {
+      color: #9C7A4F;
+    }
+
+    .subtitle {
+      margin-top: 15px;
+      font-size: 18px;
+      color: #6b5a45;
+    }
+
+    /* BUTTONS */
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      padding: 12px 18px;
+      border-radius: 30px;
+      border: 1px solid #d6c9bc;
+      background: transparent;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn.primary {
+      background: #3B2412;
+      color: white;
+      border: none;
+    }
+
+    .btn.secondary {
+      background: #8a6b43;
+      color: white;
+      border: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    /* IMAGE */
+    .profile {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid white;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    }
+
+    .image-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 320px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header class="header">
-        <a href="#" class="logo">Home</a>
 
-        <nav class="navbar">
-            <a href="portafolio.html" style="--i:1">Portfolio</a>
-            <a href="#contact" style="--i:2">Contact</a>
-        </nav>
-    </header>
-    <section class="home">
-        <div class="home-content">
-            <h3>Hello, My name is</h3>
-            <h3>Silvia Espinosa Granados</h3>
-            <h3>And I'm a <span class="text"></span></h3>
-            <div class="home-sci">
-                <a href="https://wa.me/358442993032" target="_blank" style="--i:8">
-                    <i class='bx bxl-whatsapp'></i>
-                </a>
-                <a href="https://www.linkedin.com/in/silvia-espinosa-granados-a36a7324a/" target="_blank" style="--i:9">
-                    <i class='bx bxl-linkedin'></i>
-                </a>
-            </div>
-            <a href="about.html" class="btn-box">More About Me</a>
-            </div>
+  <!-- NAVBAR -->
+  <header>
+    <div class="logo">Silvia.</div>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    </section>
+  <!-- HERO -->
+  <section id="hero" class="hero">
 
-    <section id="contact" class="contact-placeholder">
-        <h3>Under Construction</h3>
-        <p>Contact page will be available soon.</p>
-    </section>
+    <!-- TEXT -->
+    <div class="content">
+        <div class="quote" style="font-size: 24px">
+            “Consistent effort creates meaningful results.”
+        </div>
 
-    <script src="main.js"></script>
+      <h1>
+        Silvia Espinosa<br>
+        <span>Granados</span>
+      </h1>
+
+      <h2 class="roles">
+          <span id="role-text"></span>
+      </h2>
+
+      <div class="buttons">
+        <button class="btn primary" onclick="location.href='#projects'">
+        📁 View Projects</button>
+         <button class="btn secondary" onclick="location.href='#contact'">
+        ✉ Contact me</button>
+        <a class="btn" href="CV/Espinosa_Silvia_CV5.pdf" target="_blank">
+           ⬇ View CV
+        </a>
+        <button class="btn" onclick="window.open('https://www.linkedin.com/in/silvia-espinosa-granados-a36a7324a/', '_blank')">
+        LinkedIn
+        </button>
+        <button class="btn" onclick="location.href='#about'">
+        👤 About me</button>
+      </div>
+    </div>
+
+    <!-- IMAGE -->
+    <div class="image-container">
+      <img class="profile" src="images/silvia2.jpg" alt="Profile Image">
+    </div>
+
+  </section>
+
+<script>
+  const roles = [
+    "Customer Support Engineer",
+    "Service Engineer",
+    "Tester",
+    "Integration Engineer",
+    "Data Analyst (Entry-Level)"
+  ];
+
+  let index = 0;
+  const element = document.getElementById("role-text");
+
+  function changeRole() {
+    element.textContent = roles[index];
+    index = (index + 1) % roles.length;
+  }
+
+  changeRole(); // initial load
+  setInterval(changeRole, 2000); // change every 2 seconds
+</script>
+
+<section id="projects" class="projects">
+
+  <h1 class="page-title">Projects</h1>
+
+  <p class="page-subtitle">
+    This page is updated whenever a new project is added.
+  </p>
+
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-header">
+
+        <a href="project1/" target="_blank">
+          <img class="project-icon" src="images/Unemployment.png" alt="Open project files">
+        </a>
+
+       <h2>Understanding Unemployment Trends in Finland</h2>
+      </div>
+
+      <p>
+        This project focuses on analyzing historical unemployment data in Finland
+        to identify key trends and patterns. It also explores machine learning
+        techniques to predict unemployment behavior and presents findings through
+        an interactive dashboard.
+      </p>
+    </div>
+
+    <div class="project-card">
+     <div class="project-header">
+
+        <a href="project2/" target="_blank">
+          <img class="project-icon" src="images/Machine.png" alt="Open project files">
+        </a>
+
+        <h2>Clustering, Visuaization & machine Learning</h2>
+     </div>
+      <p>
+        Python projects focused on clustering, data visualization, and machine learning using KMeans and TensorFlow.
+      </p>
+    </div>
+
+
+    <div class="project-card">
+     <div class="project-header">
+
+        <a href="project3/" target="_blank">
+          <img class="project-icon" src="images/Presentation.png" alt="Open project files">
+        </a>
+
+        <h2>Presentations & Technical Topics</h2>
+     </div>
+      <p>
+        A collection of presentations covering topics related to data analysis,
+        technology, and project development.
+      </p>
+    </div>
+
+    <div class="project-card">
+     <div class="project-header">
+
+        <a href="project4/" target="_blank">
+          <img class="project-icon" src="images/EDA.png" alt="Open project files">
+        </a>
+
+        <h2>EDA excercises</h2>
+     </div>
+      <p>
+        Projects focused on exploratory data analysis (EDA), data cleaning, and
+        preprocessing techniques.
+      </p>
+    </div>
+
+
+  </div>
+
+</section>
+
+<section id="contact" class="contact">
+
+  <h1 class="page-title">Contact Me</h1>
+
+  <p class="page-subtitle">
+    Feel free to reach out for opportunities, collaborations, or networking.
+  </p>
+
+  <div class="contact-grid">
+
+    <!-- NAME CARD -->
+    <div class="contact-card">
+
+      <img src="images/Name.png" alt="Name Icon" class="contact-icon">
+
+      <h2>Name</h2>
+
+      <p>Silvia Espinosa Granados</p>
+
+    </div>
+
+    <!-- EMAIL CARD -->
+    <a href="mailto:your@email.com" class="contact-card">
+
+      <img src="images/email.png" alt="Email Icon" class="contact-icon">
+
+      <h2>Email</h2>
+
+      <p>silviluchis@gmail.com</p>
+
+    </a>
+
+    <!-- PHONE CARD -->
+    <div class="contact-card">
+
+      <img src="images/Telephone.png" alt="Phone Icon" class="contact-icon">
+
+      <h2>Telephone</h2>
+
+      <p>+358 044 299 3032</p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="about" class="about">
+
+  <div class="about-container">
+
+    <!-- LEFT SIDE -->
+
+ 
+
+    </div>
+
+      <div class="about-text">
+
+      <h1 class="page-title">About Me</h1>
+
+      <p class="about-description">
+       A technology professional with a long background in  <span class="highlight">IT and telecommunications</span>, shaped by international and multicultural environments.
+       A strong sense of responsibility and commitment has been a consistent part of the journey — both towards the teams worked with and the customers supported. Focus has always been placed on delivering reliable results, solving problems effectively, and contributing positively to team goals.
+       Curiosity and continuous learning have played an important role throughout the career, from software engineering and cartography to services, support, and integration engineering roles in complex telecom environments.
+
+      </p>
+
+      <p class="about-description">
+       Over the years, experience has been built not only in technical systems, but also in collaboration, communication, mentoring, and working in cross-functional teams.
+       Recently, the focus has expanded toward data analytics, Python, and machine learning through formal studies in Helsinki, opening a new direction that combines technical experience with data-driven thinking.
+      A mindset built on responsibility, curiosity, and continuous improvement continues to guide the search for roles where both technical and collaborative skills can contribute to meaningful outcomes.
+      </p>
+
+      <div class="working-style">
+
+    </div>
+    
+  </div>
+
+  <div class="about-quote">
+       “Stay curious, take responsibility, and keep learning.”
+    <div class="quote-signature">— Silvia Espinosa Granados</div>
+   </div>
+
+</section>
+
 </body>
 </html>
