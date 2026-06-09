@@ -186,9 +186,22 @@
         📁 View Projects</button>
          <button class="btn secondary" onclick="location.href='#contact'">
         ✉ Contact me</button>
-        <a class="btn" href="CV/Espinosa_Silvia_CV5.pdf" target="_blank">
-           ⬇ View CV
-        </a>
+        <div class="cv-container">
+            <button class="btn" id="cvButton">
+              ⬇ View CV
+            </button>
+
+         <div class="cv-options" id="cvOptions">
+            <a class="cv-option" href="CV/Espinosa_Silvia_CV6.pdf" target="_blank">
+             🇬🇧 English
+            </a>
+
+            <a class="cv-option" href="CV/Espinosa_Silvia__FIN_CV1.pdf" target="_blank">
+             🇫🇮 Finnish
+            </a>
+         </div>
+        </div>
+
         <button class="btn" onclick="window.open('https://www.linkedin.com/in/silvia-espinosa-granados-a36a7324a/', '_blank')">
         LinkedIn
         </button>
@@ -373,7 +386,7 @@
 
       <p class="about-description">
        Over the years, experience has been built not only in technical systems, but also in collaboration, communication, mentoring, and working in cross-functional teams.
-       Recently, the focus has expanded toward data analytics, Python, and machine learning through formal studies in Helsinki, opening a new direction that combines technical experience with data-driven thinking.
+       Recently, the focus has expanded toward <span class="highlight">data analytics</span>, Python, and machine learning through formal studies in Helsinki, opening a new direction that combines technical experience with data-driven thinking.
       A mindset built on responsibility, curiosity, and continuous improvement continues to guide the search for roles where both technical and collaborative skills can contribute to meaningful outcomes.
       </p>
 
@@ -389,6 +402,28 @@
    </div>
 
 </section>
+
+
+<script>
+ const cvButton = document.getElementById("cvButton");
+ const cvOptions = document.getElementById("cvOptions");
+
+ cvButton.addEventListener("click", (e) => {
+   e.stopPropagation();
+   cvOptions.classList.toggle("show");
+ });
+
+ document.querySelectorAll(".cv-option").forEach(option => {
+   option.addEventListener("click", () => {
+     cvOptions.classList.remove("show");
+   });
+ });
+
+ document.addEventListener("click", () => {
+   cvOptions.classList.remove("show");
+ });
+ </script>
+
 
 </body>
 </html>
