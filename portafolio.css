@@ -341,8 +341,9 @@ header {
 }
 
 .highlight {
-  color: #9C7A4F;
-  font-weight: 500;
+  color: #A66A2C;
+  font-weight: 600;
+  letter-spacing: 0.3px;
 }
 
 .btn {
@@ -361,4 +362,42 @@ header {
 
   text-decoration: none;   /* IMPORTANT */
   color: inherit;          /* IMPORTANT */
+}
+
+/* CV selector */
+
+.cv-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cv-options {
+  display: none;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.cv-options.show {
+  display: flex;
+}
+
+.cv-option {
+  padding: 8px 16px;
+  border-radius: 25px;
+
+  background: white;
+  border: 1px solid #d6c9bc;
+
+  color: #3B2412;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: all 0.3s ease;
+}
+
+.cv-option:hover {
+  background: #ece3d8;
+  transform: translateY(-2px);
 }
